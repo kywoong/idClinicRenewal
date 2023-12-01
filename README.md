@@ -1,5 +1,5 @@
 # ID의원 리뉴얼
-<img src="./img/demo.PNG.jpg" width="100%" alt="목업이미지">   
+<img src="./img/demo.PNG.jpg" width="800px" alt="목업이미지">   
 
 ---
 
