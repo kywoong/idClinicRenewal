@@ -1,0 +1,366 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;600;700;800;900&family=Noto+Serif+KR:wght@200;300;400;500;600;700&display=swap');
+
+:root {
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 16px;
+}
+
+strong {
+    color: #f36f2a;
+}
+
+svg {
+    width: 50px;
+}
+
+img {
+    width: 200px;
+}
+
+a {
+    cursor: pointer;
+}
+
+
+.wrap {
+    max-width: 1920px;
+    width: calc(100% - 2rem);
+    margin: auto;
+    overflow: hidden;
+}
+
+.swrap {
+    max-width: 1440px;
+    width: calc(100% - 2rem);
+    margin: auto;
+    overflow: hidden;
+}
+
+/* gnb  */
+
+.gnb.swrap {
+    border-bottom: 1px solid #cfcaca;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    margin-bottom: 0.5rem;
+    overflow: visible;
+}
+
+/*gnb width 1080이하부터 햄버거 */
+.gnb img {
+    width: 100%;
+}
+
+.gnb .menu {
+    display: flex;
+    font-weight: 500;
+    position: relative;
+}
+
+.gnb .menu a {
+    padding: 0.5rem 1.5rem;
+}
+
+.gnb i {
+    transform: scale(1.5);
+    position: absolute;
+    right: 4%;
+    transform: translateX(-5%) scale(1.5);
+    cursor: pointer;
+    display: none;
+}
+
+.gnb i:hover {
+    scale: 1.3;
+}
+
+.gnb .rightBox {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    position: relative;
+}
+
+.gnb .rightBox .branch {
+    border: 1px solid #cfcaca;
+    cursor: pointer;
+    position: relative;
+    padding: 1rem 2rem 1rem 1rem;
+}
+
+.gnb .rightBox .branch:hover span {
+    color: #f36f2a;
+}
+
+.gnb .rightBox .branch li:hover a {
+    color: #f36f2a;
+}
+
+.gnb .rightBox .branch::before {
+    content: "\f0d7";
+    display: inline-block;
+    font-family: fontAwesome;
+    padding: 0.5rem;
+    position: absolute;
+    top: 50%;
+    right: 5%;
+    transform: translateY(-50%);
+}
+
+.gnb .rightBox .branch ul {
+    position: absolute;
+    top: 50px;
+    left: 0;
+    z-index: 100;
+    width: 120%;
+    overflow: hidden;
+    height: 0%;
+    transition: 0.5s;
+}
+
+.gnb .rightBox .branch>ul.on {
+    height: auto;
+}
+
+
+.rightBox .branch li {
+    border: 1px solid #cfcaca;
+    background-color: white;
+    padding: 0.5rem;
+}
+
+
+.gnb .rightBox span svg {
+    width: 40px;
+}
+
+.gnb .rightBox a,
+.gnb .menu a {
+    transition: 0.3s;
+}
+
+.gnb .rightBox a:hover svg {
+    scale: 1.2;
+}
+
+.gnb .menu a:hover {
+    color: #f36f2a;
+}
+
+
+/* sideBar  */
+
+.sideBar {
+    position: fixed;
+    height: 0;
+    z-index: 99999;
+    font-size: 0.8em;
+    top: 70%;
+    right: 5%;
+}
+
+.sideBar>a {
+    display: block;
+    border: 1px solid #002f6b;
+    border-radius: 15%;
+    border-style: dashed;
+    width: 70px;
+    height: 70px;
+    margin: 0.5rem 0;
+    padding-bottom: 1rem;
+    transition: 0.3s;
+    background-color: whitesmoke;
+    position: relative;
+}
+
+.sideBar>a:hover svg {
+    scale: 1.3;
+}
+
+.sideBar>a svg {
+    width: 70px;
+    transition: 0.3s;
+}
+
+.sideBar>a p {
+    position: absolute;
+    bottom: 5px;
+    left: 50%;
+    transform: translateX(-50%);
+    word-break: keep-all;
+}
+
+/* footer  */
+footer .cop {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    padding: 2rem;
+    color: #cfcaca;
+    word-break: keep-all;
+}
+
+footer .cop img {
+    width: 100px;
+}
+
+footer .cop div {
+    position: relative;
+}
+
+footer .cop span {
+    color: #999999;
+    font-weight: 600;
+}
+
+footer .cop div:nth-child(3):before,
+footer .cop div:nth-child(2):before {
+    content: "";
+    display: block;
+    height: 5rem;
+    width: 2px;
+    background-color: white;
+    position: absolute;
+    top: 50%;
+    left: -1rem;
+    transform: translateY(-50%);
+}
+
+.exit {
+    display: none;
+}
+
+.exit.on {
+    display: block;
+}
+
+.exit.on:hover {
+    cursor: pointer;
+}
+
+@media (max-width: 1440px) {
+    .sideBar {
+        right: 2%;
+    }
+}
+
+@media (max-width: 1140px) {
+
+    /* .gnb .rightBox, */
+    .gnb .menu {
+        display: none;
+    }
+
+    .gnb i {
+        display: block;
+    }
+
+    .menu.on {
+        display: flex;
+        flex-direction: column;
+        z-index: 99999;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: white;
+    }
+
+    .menu.on>* {
+        padding: 1rem;
+        width: 100%;
+        border: 1px solid #cfcaca;
+        text-align: center;
+    }
+
+    .menu.on li a {
+        display: block;
+        padding: 1rem 0;
+    }
+
+    .menu.on+.exit {
+        display: block;
+        position: fixed;
+        z-index: 999999;
+        right: 10%;
+    }
+
+    .rightBox {
+        position: relative;
+        right: 5%;
+    }
+}
+
+.rightBox.on>* {
+    border: 1px solid black;
+
+}
+
+
+@media (max-width: 850px) {
+    .sideBar {
+        top: auto;
+        right: auto;
+        bottom: -10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        margin: 0;
+        height: auto;
+    }
+
+    .sideBar>a {
+        border: 1px solid #f36f2a;
+        border-radius: 0;
+        border-style: solid;
+        width: 50%;
+        height: auto;
+        min-height: 70px;
+        background-color: #002f6b;
+    }
+
+    .sideBar span {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+    }
+
+
+    .sideBar>a p {
+        color: #f36f2a;
+        margin-bottom: 8px;
+    }
+
+    footer .cop {
+        padding-bottom: 15%;
+    }
+}
+
+@media (max-width: 570px) {
+
+    footer .cop {
+        flex-direction: column;
+        align-items: flex-start;
+        padding-bottom: 5rem;
+    }
+
+    .rightBox .branch {
+        display: none;
+    }
+}
+
+@media (max-width: 420px) {
+
+    .rightBox .utb,
+    .rightBox .kakao {
+        display: none;
+    }
+}
